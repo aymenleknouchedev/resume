@@ -19,44 +19,85 @@
     <link rel="stylesheet" href="css/vendor.css">
     <link rel="stylesheet" href="css/styles.css">
 
-    <!-- Custom CSS for WhatsApp Button -->
     <style>
         .whatsapp-float {
             position: fixed;
             width: 60px;
             height: 60px;
-            bottom: 40px;
-            right: 40px;
+            bottom: 42px;
+            right: 42px;
             background-color: #25d366;
-            color: #FFF;
-            border-radius: 50px;
+            color: #fff;
+            border-radius: 50%;
             text-align: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 3px #999;
-            z-index: 100;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            z-index: 999;
             transition: all 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: visible;
+        }
+
+        .whatsapp-float img {
+            width: 32px;
+            height: 32px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
+
+        /* Green waves animation */
+        .whatsapp-float::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(37, 211, 102, 0.3);
+            z-index: 1;
+            animation: whatsapp-wave 3s infinite;
+        }
+
+        @keyframes whatsapp-wave {
+            0% {
+                opacity: 0.7;
+                transform: translate(-50%, -50%) scale(1);
+            }
+            70% {
+                opacity: 0.2;
+                transform: translate(-50%, -50%) scale(1.8);
+            }
+            100% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(2.2);
+            }
         }
 
         .whatsapp-float:hover {
-            background-color: #128C7E;
-            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+            background-color: #20ba5a;
         }
 
-        .whatsapp-float i {
-            margin-top: 5px;
-        }
-
-        /* For mobile devices */
-        @media screen and (max-width: 767px) {
+        @media (max-width: 600px) {
             .whatsapp-float {
                 width: 50px;
                 height: 50px;
                 bottom: 20px;
                 right: 20px;
-                font-size: 24px;
+            }
+            .whatsapp-float img {
+                width: 28px;
+                height: 28px;
+            }
+            .whatsapp-float::before {
+                width: 50px;
+                height: 50px;
             }
         }
     </style>
@@ -789,8 +830,11 @@
     </div> <!-- end -s-pagewrap -->
 
     <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/213549739507" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
+    <a href="https://wa.me/213549739507"
+        class="whatsapp-float"
+        target="_blank"
+        title="Chat on WhatsApp">
+        <img src="/images/icons/whatsapp.png" alt="WhatsApp">
     </a>
 
 
