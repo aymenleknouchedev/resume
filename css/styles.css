@@ -3374,7 +3374,6 @@ img.u-pull-left {
 
         font-size   : var(--text-display-1);
         line-height : var(--vspace-2);
-        --text-huge : 6rem;
 
     }
 
@@ -3388,7 +3387,7 @@ img.u-pull-left {
         display : none;
     }
     .intro-content .text-huge-title {
-        --text-huge : 6rem;
+        --text-huge : 8rem;
 
     }
 }
