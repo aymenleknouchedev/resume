@@ -59,20 +59,17 @@
             width: 60px;
             height: 60px;
             border-radius: 50%;
-            background: rgba(37, 211, 102, 0.3);
+            background: rgba(37, 211, 101, 0.43);
             z-index: 1;
-            animation: whatsapp-wave 3s infinite;
+            animation: whatsapp-wave 2s infinite ease-in-out;
         }
 
         @keyframes whatsapp-wave {
             0% {
-                opacity: 0.7;
+                opacity: 1;
                 transform: translate(-50%, -50%) scale(1);
             }
-            70% {
-                opacity: 0.2;
-                transform: translate(-50%, -50%) scale(1.8);
-            }
+
             100% {
                 opacity: 0;
                 transform: translate(-50%, -50%) scale(2.2);
