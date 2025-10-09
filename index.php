@@ -176,13 +176,13 @@
                             Hello World
                         </div>
 
-                        <h1 class="text-huge-title">
+                        <h3 class="text-huge-title">
                             I am Aymen, <br>
                             a Computer Engineer <br>
                             & Full Stack Developer <br>
                             building projects from <br>
                             idea to deployment.
-                        </h1>
+                        </h3>
                     </div>
 
                     <ul class="intro-social">
