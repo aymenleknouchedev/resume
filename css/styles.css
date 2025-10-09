@@ -2686,6 +2686,7 @@ img.u-pull-left {
 }
 
 .text-huge-title {
+
     --text-huge : 6rem;
     font-size   : var(--text-huge);
     line-height : 1.0740;
@@ -3370,8 +3371,11 @@ img.u-pull-left {
 
 @media screen and (max-width: 400px) {
     .intro-content .text-huge-title {
+
         font-size   : var(--text-display-1);
         line-height : var(--vspace-2);
+                    --text-huge : 4rem;
+
     }
 
     .intro-social {
