@@ -22,10 +22,10 @@
     <style>
         .whatsapp-float {
             position: fixed;
-            width: 60px;
-            height: 60px;
-            bottom: 42px;
-            right: 42px;
+            width: 70px;
+            height: 70px;
+            bottom: 60px;
+            right: 60px;
             background-color: #25d366;
             color: #fff;
             border-radius: 50%;
@@ -86,14 +86,14 @@
 
         @media (max-width: 600px) {
             .whatsapp-float {
-                width: 50px;
-                height: 50px;
-                bottom: 20px;
-                right: 20px;
+                width: 65px;
+                height: 65px;
+                bottom: 40px;
+                right: 40px;
             }
             .whatsapp-float img {
-                width: 28px;
-                height: 28px;
+                width: 30px;
+                height: 30px;
             }
             .whatsapp-float::before {
                 width: 50px;
