@@ -1,669 +1,716 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html class="no-js ss-preload" lang="en">
 <head>
-    <title>Aymen Lkenouche - Creative Designer & Developer</title>
-    <meta name="keywords" content="Aymen Lkenouche, Graphic Design, UI/UX, Web Development, Social Media Management" />
-    <meta name="description" content="Aymen Lkenouche - Creative Designer & Developer specializing in Graphic Design, UI/UX, Web Development, and Social Media Management" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-    <!-- FavIcon CSS -->
-    <link rel="icon" href="assets/images/favicon.png" type="image/gif" sizes="16x16">
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>Aymen - Computer Engineer</title>
+    <meta name="description" content="Aymen - Computer Engineer | Full Stack Developer | UI/UX Designer">
+    <meta name="author" content="Aymen">
 
-    <!--Bootstrap CSS-->
-    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <!-- mobile specific metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!--Google Fonts CSS-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/styles.css">
 
-    <!--Font Awesome Icon CSS-->
-    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+    <!-- favicons
+    ================================================== -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
 
-    <!-- Swiper Slider CSS -->
-    <link rel="stylesheet" type="text/css" href="assets/css/swiper-bundle.min.css">
-
-    <!-- Wow Animation CSS -->
-    <link rel="stylesheet" type="text/css" href="assets/css/animate.min.css">
-
-    <!-- Magnific Popup CSS -->
-    <link rel="stylesheet" type="text/css" href="assets/css/magnific-popup.min.css">
-
-    <!-- Jarallax CSS -->
-    <link rel="stylesheet" type="text/css" href="assets/css/jarallax.css">
-
-    <!-- Main Style CSS  -->
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
-    <style>
-        /* Custom styles for Aymen's portfolio */
-        .skill-tag {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 5px 15px;
-            border-radius: 20px;
-            margin: 5px;
-            font-size: 14px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .skill-section {
-            padding: 80px 0;
-            background: rgba(0, 0, 0, 0.3);
-        }
-
-        .highlight-text {
-            color: #ff6b6b;
-        }
-    </style>
 </head>
 
-<body class="dark-bg">
+<body id="top">
 
-    <!-- Loder Start -->
-    <div class="loader-box-two">
-        <div class="loader-one">
-            <svg>
-                <defs>
-                    <filter id="goo">
-                        <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur" />
-                        <feColorMatrix values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 5 -2" result="gooey" />
-                        <feComposite in="SourceGraphic" in2="gooey" operator="atop" />
-                    </filter>
-                </defs>
-            </svg>
+
+    <!-- # preloader
+    ================================================== -->
+    <div id="preloader">
+        <div id="loader">
         </div>
     </div>
-    <!-- Loder End -->
 
-    <!-- Header Start -->
-    <header class="site-header two">
-        <!--Navbar Start  -->
-        <div class="header-bottom">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-2">
-                        <!-- Sit Logo Start -->
-                        <div class="site-branding">
-                            <a href="index.html" title="Aymen Lkenouche">
-                                <img src="assets/images/logo2.png" alt="Aymen Lkenouche">
-                            </a>
+
+    <!-- # page wrap
+    ================================================== -->
+    <div class="s-pagewrap">
+
+        <div class="circles">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+
+        <!-- ## site header 
+        ================================================== -->
+        <header class="s-header">
+
+            <div class="header-mobile">
+                <span class="mobile-home-link"><a href="index.html">Aymen.</a></span>
+                <a class="mobile-menu-toggle" href="#0"><span>Menu</span></a>
+            </div>
+
+            <div class="row wide main-nav-wrap">
+                <nav class="column lg-12 main-nav">
+                    <ul>
+                        <li><a href="index.html" class="home-link">Aymen.</a></li>
+                        <li class="current"><a href="#intro" class="smoothscroll">Intro</a></li>
+                        <li><a href="#about" class="smoothscroll">About</a></li>
+                        <li><a href="#services" class="smoothscroll">Services</a></li>
+                        <li><a href="#works" class="smoothscroll">Projects</a></li>
+                        <li><a href="#contact" class="smoothscroll">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+        </header> <!-- end s-header -->
+
+
+        <!-- ## main content
+        ==================================================- -->
+        <main class="s-content">
+
+
+            <!-- ### intro
+            ================================================== -->
+            <section id="intro" class="s-intro target-section">
+
+                <div class="row intro-content wide">
+
+                    <div class="column">
+                        <div class="text-pretitle with-line">
+                            Hello World
                         </div>
-                        <!-- Sit Logo End -->
+
+                        <h1 class="text-huge-title">
+                            I am Aymen, <br>
+                            a Computer Engineer <br>
+                            & Full Stack Developer <br> 
+                            building projects from <br>
+                            idea to deployment.
+                        </h1>
                     </div>
-                    <div class="col-lg-10">
-                        <div class="header-menu">
-                            <nav class="main-navigation two">
-                                <button class="toggle-button">
-                                    <svg class="ham hamRotate ham8" viewBox="0 0 100 100" width="60">
-                                        <path class="line-ham top" d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20" />
-                                        <path class="line-ham middle" d="m 30,50 h 40" />
-                                        <path class="line-ham bottom" d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20" />
-                                    </svg>
-                                </button>
-                                <div class="mobile-menu-box">
-                                    <i class="menu-background two top"></i>
-                                    <i class="menu-background two middle"></i>
-                                    <i class="menu-background two bottom"></i>
-                                    <ul class="menu">
-                                        <li class="sub-items active">
-                                            <a href="javascript:void(0);" title="Home">Home</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="index.html" title="Home">Home 01</a></li>
-                                                <li><a href="index-02.html" title="Home">Home 02</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="sub-items">
-                                            <a href="javascript:void(0);" title="About Me">About Me</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="about-us.html" title="About Me">About Me 01</a></li>
-                                                <li><a href="about-us-02.html" title="About Me">About Me 02</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="sub-items">
-                                            <a href="javascript:void(0);" title="Services">Services</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="services.html" title="Services">Services 01</a></li>
-                                                <li><a href="services-02.html" title="Services">Services 02</a></li>
-                                                <li><a href="service-detail.html" title="Service Detail">Service Detail 01</a></li>
-                                                <li><a href="service-detail-02.html" title="Service Detail">Service Detail 02</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="sub-items">
-                                            <a href="javascript:void(0);" title="Portfolio">Portfolio</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="portfolio.html" title="Portfolio">Portfolio 01</a></li>
-                                                <li><a href="portfolio-02.html" title="Portfolio">Portfolio 02</a></li>
-                                                <li><a href="portfolio-detail.html" title="Portfolio Detail">Portfolio Detail 01</a></li>
-                                                <li><a href="portfolio-detail-02.html" title="Portfolio Detail">Portfolio Detail 02</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="sub-items">
-                                            <a href="javascript:void(0);" title="Blog">Blog</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="blog-grid.html" title="Blog Grid">Blog Grid</a></li>
-                                                <li><a href="blog-list.html" title="Blog List">Blog List</a></li>
-                                                <li><a href="blog-detail.html" title="Blog Detail">Blog Detail 01</a></li>
-                                                <li><a href="blog-detail-02.html" title="Blog Detail">Blog Detail 02</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="sub-items">
-                                            <a href="javascript:void(0);" title="Contact Us">Contact Us</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="contact-us.html" title="Contact Us">Contact Us 01</a></li>
-                                                <li><a href="contact-us-02.html" title="Contact Us">Contact Us 02</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </nav>
-                            <div class="black-shadow"></div>
-                            <div class="header-btn">
-                                <a href="contact-us-02.html" class="sec-btn">Book Appointment</a>
+
+                    <ul class="intro-social">
+                        <li><a href="#0">GitHub</a></li>
+                        <li><a href="#0">LinkedIn</a></li>
+                        <li><a href="#0">Behance</a></li>
+                        <li><a href="#0">Dribbble</a></li>
+                    </ul>
+
+                </div> <!-- end intro content -->
+
+                <a href="#about" class="intro-scrolldown smoothscroll">
+                    <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M11 21.883l-6.235-7.527-.765.644 7.521 9 7.479-9-.764-.645-6.236 7.529v-21.884h-1v21.883z"/></svg>
+                </a>
+
+            </section> <!-- end s-intro -->
+
+
+            <!-- ### about
+            ================================================== -->
+            <section id="about" class="s-about target-section">
+
+
+                <div class="row about-info wide" data-animate-block>
+
+                    <div class="column lg-6 md-12 about-info__pic-block">
+                        <img src="images/about-photo.jpg" 
+                             srcset="images/about-photo.jpg 1x, images/about-photo@2x.jpg 2x" alt="Aymen - Computer Engineer" class="about-info__pic" data-animate-el>
+                    </div>
+
+                    <div class="column lg-6 md-12">
+                        <div class="about-info__text" >
+
+                            <h2 class="text-pretitle with-line" data-animate-el>
+                                About
+                            </h2>
+                            <p class="attention-getter" data-animate-el>
+                                I'm a Computer Engineer passionate about creating digital solutions from concept to completion. 
+                                With expertise in both design and development, I bridge the gap between beautiful user interfaces 
+                                and robust technical implementations. I specialize in transforming ideas into fully functional 
+                                applications with seamless user experiences.
+                            </p>
+                            <p data-animate-el>
+                                My process involves understanding client needs, designing intuitive interfaces, developing 
+                                scalable solutions, and deploying to reliable hosting environments. Whether it's a web application, 
+                                mobile app, or custom software, I ensure every project meets the highest standards of quality and performance.
+                            </p>
+                            <a href="#0" class="btn btn--medium u-fullwidth" data-animate-el>Download Resume</a>
+
+                        </div>
+                    </div>
+                </div> <!-- about-info -->
+
+
+                <!-- ### services
+                ================================================== -->
+                <section id="services" class="s-services target-section">
+                    <div class="row services-list block-lg-one-half block-stack-on-1000" data-animate-block>
+
+                        <div class="column services-list__item" data-animate-el>
+                            <div class="services-list__item-content">
+                                <h4 class="services-list__item-title">UI/UX Design</h4>
+                                <p class="services-list__item-desc">
+                                    Creating intuitive and engaging user interfaces with a focus on user experience. 
+                                    From wireframes to interactive prototypes, I design solutions that are both beautiful and functional.
+                                </p>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--Navbar End  -->
-    </header>
-    <!-- Header End -->
+                        </div> <!-- end services-list__item -->
 
-    <!-- Banner Start -->
-    <section class="main-banner-one">
-        <div class="banner-blur-one"><img src="assets/images/banner-blur1.png" alt="Blur"></div>
-        <div class="banner-blur-two"><img src="assets/images/banner-blur2.png" alt="Blur"></div>
-        <div class="banner-bg-aliment-two animate-this"><img src="assets/images/banner-bg-alimants-two.png" alt="Aliments"></div>
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="banner-title two">
-                        <h2 class="h2-subtitle wow fadeInUp" data-wow-delay=".5s">Creative Designer & Developer</h2>
-                        <h1 class="h1-title text-white wow fadeInUp" data-wow-delay=".7s">Hey! I Am <span><img src="assets/images/hand.png" alt="Hand"></span><span class="highlight-text">Aymen Lkenouche</span></h1>
-                        <p class="wow fadeInUp" data-wow-delay=".9s">I'm a creative designer and developer specializing in <span class="highlight-text">Graphic Design, UI/UX, Web Development, and Social Media Management</span>. I'm passionate about creating engaging digital experiences that drive results.</p>
-                        <div class="banner-btn wow fadeInUp" data-wow-delay="1.1s">
-                            <a href="about-us-02.html" class="sec-btn">View My Work</a>
-                            <a href="https://www.youtube.com/watch?v=yUwpx81trCo" class="banner-play-icon popup-youtube" title="Play Video"><span><img src="assets/images/play-button.png" alt="Play"></span></a>
-                        </div>
-                        <div class="banner-social text-black wow fadeInUp" data-wow-delay="1.3s">
-                            <span class="text-white">Follow Me:</span>
-                            <ul>
-                                <li><a href="javascript:void(0);"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                <li><a href="javascript:void(0);"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                                <li><a href="javascript:void(0);"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                <li><a href="javascript:void(0);"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="banner-img-two wow fadeInUp" data-wow-delay=".5s">
-                        <img src="assets/images/banner-man-two.png" alt="Aymen Lkenouche">
-                        <div class="banner-bg-line-two animate-this">
-                            <img src="assets/images/banner-bg-line-two.png" alt="Line">
-                        </div>
-                        <a href="https://www.youtube.com/watch?v=yUwpx81trCo" class="banner-play-two popup-youtube" title="Play Video">
-                            <img src="assets/images/play-bg.png" alt="Play">
-                            <i class="fa fa-play" aria-hidden="true"></i>
-                        </a>
-                        <div class="banner-img-text-box-two">
-                            <div class="line"></div>
-                            <span>Digital<br>Solutions</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Banner End -->
+                        <div class="column services-list__item" data-animate-el>
+                            <div class="services-list__item-content">
+                                <h4 class="services-list__item-title">Full Stack Development</h4>
+                                <p class="services-list__item-desc">
+                                    Building robust applications with modern technologies. Frontend with React, Vue, or Angular, 
+                                    and backend with Node.js, Python, or PHP. Database design and API development.
+                                </p>
+                            </div>
+                        </div> <!-- end services-list__item -->
 
-    <!-- Skills Section Start -->
-    <section class="skill-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="service-titel-two">
-                        <div class="subtitle">
-                            <div class="subtitle-circle">
-                                <div class="subtitle-circle-one">
-                                    <div class="subtitle-circle1-one"></div>
-                                    <div class="subtitle-circle2-one"></div>
+                        <div class="column services-list__item" data-animate-el>
+                            <div class="services-list__item-content">
+                                <h4 class="services-list__item-title">Deployment & Hosting</h4>
+                                <p class="services-list__item-desc">
+                                    Ensuring your application runs smoothly in production. Cloud deployment, 
+                                    server configuration, CI/CD pipelines, and performance optimization for scalable solutions.
+                                </p>
+                            </div>
+                        </div> <!-- end services-list__item -->
+
+                        <div class="column services-list__item" data-animate-el>
+                            <div class="services-list__item-content">
+                                <h4 class="services-list__item-title">End-to-End Solutions</h4>
+                                <p class="services-list__item-desc">
+                                    Taking projects from initial concept to final product. Comprehensive project management, 
+                                    regular updates, and delivering solutions that exceed expectations.
+                                </p>
+                            </div>
+                        </div> <!-- end services-list__item -->
+
+                    </div> <!-- end services-list -->
+                </section> <!-- end s-services -->
+
+
+                <div class="row about-expertise" data-animate-block>
+                    <div class="column lg-12">
+
+                        <h2 class="text-pretitle" data-animate-el>Technical Skills</h2>
+
+                        <ul class="skills-list h1" data-animate-el>
+                            <li>UI/UX Design</li>
+                            <li>Frontend Development</li>
+                            <li>Backend Development</li>
+                            <li>Database Design</li>
+                            <li>Cloud Deployment</li>
+                            <li>DevOps</li>
+                        </ul>
+
+                    </div>
+                </div> <!-- end about-expertise -->
+
+
+                <div class="row about-timelines" data-animate-block>
+
+                    <div class="column lg-6 tab-12">
+
+                        <h2 class="text-pretitle" data-animate-el>
+                            Experience
+                        </h2>
+
+                        <div class="timeline" data-animate-el>
+
+                            <div class="timeline__block">
+                                <div class="timeline__bullet"></div>
+                                <div class="timeline__header">
+                                    <h4 class="timeline__title">Freelance Full Stack Developer</h3>
+                                    <h5 class="timeline__meta">Computer Engineer</h5>
+                                    <p class="timeline__timeframe">2020 - Present</p>
                                 </div>
-                                <div class="subtitle-circle-two">
-                                    <div class="subtitle-circle1-two"></div>
-                                    <div class="subtitle-circle2-two"></div>
+                                <div class="timeline__desc">
+                                    <p>Developed end-to-end solutions for various clients, from concept to deployment. 
+                                    Designed user interfaces, built scalable applications, and deployed to cloud platforms. 
+                                    Technologies used include React, Node.js, Python, and various databases.</p>
                                 </div>
                             </div>
-                            <h2 class="h2-subtitle">My Expertise</h2>
-                        </div>
-                        <h2 class="h2-title text-white">Skills & Specializations</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="skills-container wow fadeInUp" data-wow-delay=".5s">
-                        <span class="skill-tag">Graphic Design</span>
-                        <span class="skill-tag">UI/UX Design</span>
-                        <span class="skill-tag">Web Development</span>
-                        <span class="skill-tag">Social Media Management</span>
-                        <span class="skill-tag">Social Media Advertising</span>
-                        <span class="skill-tag">Brand Identity</span>
-                        <span class="skill-tag">Logo Design</span>
-                        <span class="skill-tag">Adobe Creative Suite</span>
-                        <span class="skill-tag">Figma</span>
-                        <span class="skill-tag">HTML/CSS</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">Content Strategy</span>
-                        <span class="skill-tag">Digital Marketing</span>
-                        <span class="skill-tag">Responsive Design</span>
-                        <span class="skill-tag">Wireframing</span>
-                        <span class="skill-tag">Prototyping</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Skills Section End -->
+    
+                            <div class="timeline__block">
+                                <div class="timeline__bullet"></div>
+                                <div class="timeline__header">
+                                    <h4 class="timeline__title">Tech Solutions Inc.</h4>
+                                    <h5 class="timeline__meta">Software Developer</h5>
+                                    <p class="timeline__timeframe">2018 - 2020</p>
+                                </div>
+                                <div class="timeline__desc">
+                                    <p>Worked on multiple web applications, focusing on both frontend and backend development. 
+                                    Collaborated with design teams to implement responsive interfaces and with DevOps for deployment. 
+                                    Contributed to improving application performance and user experience.</p>
+                                </div>
+                            </div>
+    
+                        </div> <!-- end timeline -->
 
-    <!--My Client Start-->
-    <div class="main-my-client-two">
-        <div class="container">
-            <div class=" swiper my-client-slider-two wow fadeInUp" data-wow-delay=".5s">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide my-client-box two">
-                        <img src="assets/images/brand1-w.png" alt="Partner">
-                    </div>
-                    <div class="swiper-slide my-client-box two">
-                        <img src="assets/images/brand2.png" alt="Partner">
-                    </div>
-                    <div class="swiper-slide my-client-box two">
-                        <img src="assets/images/brand3.png" alt="Partner">
-                    </div>
-                    <div class="swiper-slide my-client-box two">
-                        <img src="assets/images/brand4.png" alt="Partner">
-                    </div>
-                    <div class="swiper-slide my-client-box two">
-                        <img src="assets/images/brand5-w.png" alt="Partner">
-                    </div>
-                    <div class="swiper-slide my-client-box two">
-                        <img src="assets/images/brand6.png" alt="Partner">
-                    </div>
-                    <div class="swiper-slide my-client-box two">
-                        <img src="assets/images/brand3.png" alt="Partner">
-                    </div>
-                </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-pagination"></div>
-            </div>
-        </div>
-    </div>
-    <!--My Client End-->
+                    </div> <!-- end column -->
 
-    <!--About Us Start-->
-    <section class="main-about-us-two">
-        <div class="aliment-right-two"><img src="assets/images/aliment1-two.png" alt="Aliment"></div>
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 wow fadeInLeft" data-wow-delay=".5s">
-                    <div class="about-imgbox-two">
-                        <img src="assets/images/about-img-bg-two.jpg" alt="Bg">
-                        <div class="about-us-bg2-two">
-                            <img src="assets/images/about-img-bg2-two.jpg" alt="Bg">
-                        </div>
-                        <div class="about-us-man-two">
-                            <img src="assets/images/about-img-man-two.png" alt="Aymen Lkenouche">
-                        </div>
-                        <div class="about-aliment-two">
-                            <img src="assets/images/about-aliment-two.png" alt="Aliment">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 wow fadeInRight" data-wow-delay=".5s">
-                    <div class="about-content-two">
-                        <div class="about-us-title-two">
-                            <div class="subtitle">
-                                <div class="subtitle-circle">
-                                    <div class="subtitle-circle-one">
-                                        <div class="subtitle-circle1-one"></div>
-                                        <div class="subtitle-circle2-one"></div>
+                    <div class="column lg-6 tab-12">
+
+                        <h2 class="text-pretitle" data-animate-el>
+                            Education
+                        </h2>
+
+                        <div class="timeline" data-animate-el>
+
+                            <div class="timeline__block">
+                                <div class="timeline__bullet"></div>
+                                <div class="timeline__header">
+                                    <h4 class="timeline__title">Bachelor of Computer Engineering</h3>
+                                    <h5 class="timeline__meta">University of Technology</h5>
+                                    <p class="timeline__timeframe">2014 - 2018</p>
+                                </div>
+                                <div class="timeline__desc">
+                                    <p>Focused on software engineering, algorithms, data structures, and system design. 
+                                    Completed projects in web development, mobile applications, and database management. 
+                                    Graduated with honors.</p>
+                                </div>
+                            </div>
+    
+                            <div class="timeline__block">
+                                <div class="timeline__bullet"></div>
+                                <div class="timeline__header">
+                                    <h4 class="timeline__title">UI/UX Design Certification</h4>
+                                    <h5 class="timeline__meta">Design Institute</h5>
+                                    <p class="timeline__timeframe">2019</p>
+                                </div>
+                                <div class="timeline__desc">
+                                    <p>Specialized training in user interface design, user experience principles, 
+                                    prototyping tools, and design thinking methodologies. Applied skills to real-world projects.</p>
+                                </div>
+                            </div>
+    
+                        </div> <!-- end timeline -->
+                        
+                    </div> <!-- end column -->
+
+
+                </div> <!-- end about-timelines -->
+
+            </section> <!-- end s-about -->
+
+
+            <!-- ### works
+            ================================================== -->
+            <section id="works" class="s-works target-section">
+
+
+                <div class="row works-portfolio">
+
+                    <div class="column lg-12" data-animate-block>
+
+                        <h2 class="text-pretitle" data-animate-el>
+                            Recent Projects
+                        </h2>
+                        <p class="h1" data-animate-el>
+                            Here are some projects I've developed from concept to deployment. Each represents a complete solution with design, development, and hosting.
+                        </p>
+    
+                        <ul class="folio-list row block-lg-one-half block-stack-on-1000">
+
+                            <li class="folio-list__item column" data-animate-el>
+                                <a class="folio-list__item-link" href="#modal-01">
+                                    <div class="folio-list__item-pic">
+                                        <img src="images/portfolio/fuji.jpg"
+                                             srcset="images/portfolio/fuji.jpg 1x, images/portfolio/fuji@2x.jpg 2x"  alt="E-commerce Platform">
                                     </div>
-                                    <div class="subtitle-circle-two">
-                                        <div class="subtitle-circle1-two"></div>
-                                        <div class="subtitle-circle2-two"></div>
+                                    
+                                    <div class="folio-list__item-text">
+                                        <div class="folio-list__item-cat">
+                                            Full Stack Development
+                                        </div>
+                                        <div class="folio-list__item-title">
+                                            E-commerce Platform
+                                        </div>
                                     </div>
-                                </div>
-                                <h2 class="h2-subtitle">Creative Professional</h2>
-                            </div>
-                            <h2 class="h2-title text-white">About Aymen Lkenouche</h2>
-                        </div>
-                        <p>I'm a versatile creative professional with expertise spanning <span class="highlight-text">graphic design, UI/UX, web development, and social media management</span>. My approach combines artistic vision with technical expertise to create compelling digital experiences that resonate with audiences and achieve business objectives.</p>
-                        <p>With a passion for both aesthetics and functionality, I specialize in creating designs that not only look beautiful but also deliver measurable results. Whether it's developing a brand identity, designing an intuitive user interface, building a responsive website, or crafting effective social media campaigns, I bring a comprehensive skill set to every project.</p>
-                        <div class="year-btn-two">
-                            <div class="year-two">
-                                <span>50+</span>
-                                <span>Projects<br>Completed</span>
-                            </div>
-                            <a href="about-us-02.html" class="sec-btn">More About Me</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--About Us End-->
+                                </a>
+                                <a class="folio-list__proj-link" href="#" title="project link">
+                                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                                </a>
+                            </li> <!--end folio-list__item -->
 
-    <!--Counter Start-->
-    <section class="main-counter-two" id="counter">
-        <div class="container">
-            <div class="counter-bg-two wow fadeInUp" data-wow-delay=".5s">
-                <div class="counter-bg jarallax" data-jarallax data-speed="0.2" data-imgPosition="50% 0%" style="background-image: url(assets/images/counter-bg.png)"></div>
-                <div class="row">
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="counter-content-box">
-                            <div class="counter-content">
-                                <h2 class="h2-title text-white counting-data" data-count="50">0</h2>
-                                <span>Projects<br>Completed</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="counter-content-box">
-                            <div class="counter-content">
-                                <h2 class="h2-title text-white counting-data" data-count="35">0</h2>
-                                <span>Happy<br>Clients</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="counter-content-box">
-                            <div class="counter-content">
-                                <h2 class="h2-title text-white counting-data" data-count="4">0</h2>
-                                <span>Years Of<br>Experience</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6">
-                        <div class="counter-content-box">
-                            <div class="counter-content">
-                                <h2 class="h2-title text-white counting-data" data-count="12">0</h2>
-                                <span>Design<br>Awards</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--Counter End-->
-
-    <!--Services Start-->
-    <section class="main-service-two">
-        <div class="aliment-left-two"><img src="assets/images/aliment2-two.png" alt="Aliment"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="service-titel-two">
-                        <div class="subtitle">
-                            <div class="subtitle-circle">
-                                <div class="subtitle-circle-one">
-                                    <div class="subtitle-circle1-one"></div>
-                                    <div class="subtitle-circle2-one"></div>
-                                </div>
-                                <div class="subtitle-circle-two">
-                                    <div class="subtitle-circle1-two"></div>
-                                    <div class="subtitle-circle2-two"></div>
-                                </div>
-                            </div>
-                            <h2 class="h2-subtitle">My Services</h2>
-                        </div>
-                        <h2 class="h2-title text-white">What I Provide</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".5s">
-                    <div class="service-box-two">
-                        <div class="service-icon-box-two">
-                            <div class="service-icon-two">
-                                <img src="assets/images/service-icon1-two.png" alt="Icon">
-                            </div>
-                            <div class="service-icon-bg-two"></div>
-                        </div>
-                        <div class="service-content-box-two">
-                            <a href="service-detail-02.html">
-                                <h3 class="h3-title">Web<br>Development</h3>
-                            </a>
-                            <p>Custom, responsive websites built with modern technologies to ensure optimal performance and user experience across all devices.</p>
-                            <a href="service-detail-02.html" class="sec-btn"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 wow fadeInDown" data-wow-delay=".5s">
-                    <div class="service-box-two">
-                        <div class="service-icon-box-two">
-                            <div class="service-icon-two">
-                                <img src="assets/images/service-icon2-two.png" alt="Icon">
-                            </div>
-                            <div class="service-icon-bg-two"></div>
-                        </div>
-                        <div class="service-content-box-two">
-                            <a href="service-detail-02.html">
-                                <h3 class="h3-title">UI/UX<br>Design</h3>
-                            </a>
-                            <p>User-centered interface designs that combine aesthetics with functionality to create intuitive and engaging digital experiences.</p>
-                            <a href="service-detail-02.html" class="sec-btn"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".5s">
-                    <div class="service-box-two">
-                        <div class="service-icon-box-two">
-                            <div class="service-icon-two">
-                                <img src="assets/images/service-icon3-two.png" alt="Icon">
-                            </div>
-                            <div class="service-icon-bg-two"></div>
-                        </div>
-                        <div class="service-content-box-two">
-                            <a href="service-detail-02.html">
-                                <h3 class="h3-title">Graphic<br>Design</h3>
-                            </a>
-                            <p>Creative visual solutions including logos, branding materials, marketing collateral, and digital graphics that communicate your message effectively.</p>
-                            <a href="service-detail-02.html" class="sec-btn"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 wow fadeInDown" data-wow-delay=".5s">
-                    <div class="service-box-two">
-                        <div class="service-icon-box-two">
-                            <div class="service-icon-two">
-                                <img src="assets/images/service-icon4-two.png" alt="Icon">
-                            </div>
-                            <div class="service-icon-bg-two"></div>
-                        </div>
-                        <div class="service-content-box-two">
-                            <a href="service-detail-02.html">
-                                <h3 class="h3-title">Social Media<br>Management</h3>
-                            </a>
-                            <p>Comprehensive social media strategies, content creation, and advertising campaigns to build brand presence and engage your target audience.</p>
-                            <a href="service-detail-02.html" class="sec-btn"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--Services End-->
-
-    <!-- Rest of the template remains the same with minor text adjustments -->
-    <!-- All Over World Start -->
-    <section class="main-all-over-world-two">
-        <div class="aliment-right-two"><img src="assets/images/aliment1-two.png" alt="Aliment"></div>
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 wow fadeInLeft" data-wow-delay=".5s">
-                    <div class="all-over-world-contant-two">
-                        <div class="all-over-world-title-two">
-                            <div class="subtitle">
-                                <div class="subtitle-circle">
-                                    <div class="subtitle-circle-one">
-                                        <div class="subtitle-circle1-one"></div>
-                                        <div class="subtitle-circle2-one"></div>
+                            <li class="folio-list__item column" data-animate-el>
+                                <a class="folio-list__item-link" href="#modal-02">
+                                    <div class="folio-list__item-pic">
+                                        <img src="images/portfolio/lamp.jpg" 
+                                             srcset="images/portfolio/lamp.jpg 1x, images/portfolio/lamp@2x.jpg 2x" alt="Task Management App">
                                     </div>
-                                    <div class="subtitle-circle-two">
-                                        <div class="subtitle-circle1-two"></div>
-                                        <div class="subtitle-circle2-two"></div>
+                                    
+                                    <div class="folio-list__item-text">
+                                        <div class="folio-list__item-cat">
+                                            Mobile Application
+                                        </div>
+                                        <div class="folio-list__item-title">
+                                            Productivity Suite
+                                        </div>
                                     </div>
-                                </div>
-                                <h2 class="h2-subtitle">Global Reach</h2>
-                            </div>
-                            <h2 class="h2-title text-white">Working With Clients Worldwide</h2>
-                        </div>
-                        <p>My diverse skill set allows me to serve clients across various industries and locations. From local startups to international brands, I've had the privilege of collaborating with businesses around the globe to create impactful digital solutions.</p>
-                        <p>Whether you need a complete brand overhaul, a user-friendly website, or an engaging social media presence, I bring the same dedication and expertise to every project, regardless of location or industry.</p>
-                    </div>
-                </div>
-                <div class="col-lg-6 wow fadeInRight" data-wow-delay=".5s">
-                    <div class="map-two">
-                        <img src="assets/images/map-bg.jpg" alt="Map">
-                        <div class="map-dote1 animate-this">
-                            <img src="assets/images/map-dot1.png" alt="Map">
-                        </div>
-                        <div class="map-dote2 animate-this">
-                            <img src="assets/images/map-dot2.png" alt="Map">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- All Over World End -->
+                                </a>
+                                <a class="folio-list__proj-link" href="#" title="project link">
+                                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                                </a>
+                            </li> <!--end folio-list__item -->
 
-    <!-- The rest of the template (Portfolio, Pricing, Working Steps, Testimonials, CTA, Blog, Footer) remains structurally the same with text adjustments to reflect your personal brand -->
+                            <li class="folio-list__item column" data-animate-el>
+                                <a class="folio-list__item-link" href="#modal-03">
+                                    <div class="folio-list__item-pic">
+                                        <img src="images/portfolio/rucksack.jpg" 
+                                             srcset="images/portfolio/rucksack.jpg 1x, images/portfolio/rucksack@2x.jpg 2x" alt="Analytics Dashboard">
+                                    </div>
+                                    
+                                    <div class="folio-list__item-text">
+                                        <div class="folio-list__item-cat">
+                                            Web Application
+                                        </div>
+                                        <div class="folio-list__item-title">
+                                            Data Analytics Dashboard
+                                        </div>
+                                    </div>
+                                </a>
+                                <a class="folio-list__proj-link" href="#" title="project link">
+                                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                                </a>
+                            </li> <!--end folio-list__item -->
 
-    <!--Footer Start-->
-    <footer class="main-footer">
-        <div class="footer-aliment-bg animate-this"><img src="assets/images/footer-bg-aliments.png" alt="Aliments"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="work-togather-box">
-                        <div class="row align-items-center">
-                            <div class="col-lg-5 col-md-12">
-                                <div class="work-togather-text">
-                                    <h2 class="h2-title text-white">Let's Work Together</h2>
-                                    <p>Have a project in mind? Let's discuss how we can bring your vision to life with creative design and development solutions.</p>
-                                </div>
+                            <li class="folio-list__item column" data-animate-el>
+                                <a class="folio-list__item-link" href="#modal-04">
+                                    <div class="folio-list__item-pic">
+                                        <img src="images/portfolio/skaterboy.jpg"
+                                             srcset="images/portfolio/skaterboy.jpg 1x, images/portfolio/skaterboy@2x.jpg 2x" alt="Portfolio Website">
+                                    </div>
+                                    
+                                    <div class="folio-list__item-text">
+                                        <div class="folio-list__item-cat">
+                                            UI/UX Design & Development
+                                        </div>
+                                        <div class="folio-list__item-title">
+                                            Creative Agency Website
+                                        </div>
+                                    </div>
+                                </a>
+                                <a class="folio-list__proj-link" href="#" title="project link">
+                                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                                </a>
+                            </li> <!--end folio-list__item -->
+
+                            <li class="folio-list__item column" data-animate-el>
+                                <a class="folio-list__item-link" href="#modal-05">
+                                    <div class="folio-list__item-pic">
+                                        <img src="images/portfolio/sanddunes.jpg" 
+                                             srcset="images/portfolio/sanddunes.jpg 1x, images/portfolio/sanddunes@2x.jpg 2x" alt="API Development">
+                                    </div>
+                                    
+                                    <div class="folio-list__item-text">
+                                        <div class="folio-list__item-cat">
+                                            Backend Development
+                                        </div>
+                                        <div class="folio-list__item-title">
+                                            REST API Service
+                                        </div>
+                                    </div>
+                                </a>
+                                <a class="folio-list__proj-link" href="#" title="project link">
+                                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                                </a>
+                            </li> <!--end folio-list__item -->
+
+                            <li class="folio-list__item column" data-animate-el>
+                                <a class="folio-list__item-link" href="#modal-06">
+                                    <div class="folio-list__item-pic">
+                                        <img src="images/portfolio/minimalismo.jpg" 
+                                             srcset="images/portfolio/minimalismo.jpg 1x, images/portfolio/minimalismo@2x.jpg 2x" alt="Cloud Solution">
+                                    </div>
+                                    
+                                    <div class="folio-list__item-text">
+                                        <div class="folio-list__item-cat">
+                                            Cloud Deployment
+                                        </div>
+                                        <div class="folio-list__item-title">
+                                            Scalable Infrastructure
+                                        </div>
+                                    </div>
+                                </a>
+                                <a class="folio-list__proj-link" href="#" title="project link">
+                                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z" fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                                </a>
+                            </li> <!--end folio-list__item -->
+
+                        </ul> <!-- end folio-list -->
+
+                    </div> <!-- end column -->
+
+
+                    <!-- Modal Templates Popup
+                    -------------------------------------------- -->
+                    <div id="modal-01" hidden>
+                        <div class="modal-popup">
+                            <img src="images/portfolio/gallery/g-fuji.jpg" alt="E-commerce Platform">
+                
+                            <div class="modal-popup__desc">
+                                <h5>E-commerce Platform</h5>
+                                <p>Complete e-commerce solution with product catalog, shopping cart, user authentication, and payment integration. Built with React frontend, Node.js backend, and MongoDB database. Deployed on AWS with CI/CD pipeline.</p>
+                                <ul class="modal-popup__cat">
+                                    <li>Full Stack Development</li>
+                                    <li>UI/UX Design</li>
+                                    <li>Cloud Deployment</li>
+                                </ul>
                             </div>
-                            <div class="col-lg-4 col-md-7">
-                                <div class="work-togather-form">
-                                    <input type="email" name="email" class="form-input-one subscribe-input" placeholder="Email Address" required="">
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-4">
-                                <div class="work-togather-form-btn">
-                                    <button type="submit" class="sec-btn">Get In Touch</button>
-                                </div>
-                            </div>
+                
+                            <a href="https://www.github.com/" class="modal-popup__details">View on GitHub</a>
                         </div>
+                    </div> <!-- end modal -->
+
+                    <div id="modal-02" hidden>
+                        <div class="modal-popup">
+                            <img src="images/portfolio/gallery/g-lamp.jpg" alt="Productivity Suite">
+                
+                            <div class="modal-popup__desc">
+                                <h5>Productivity Suite</h5>
+                                <p>Cross-platform task management application with real-time synchronization. Features include project organization, team collaboration, and progress tracking. Developed with React Native for mobile and web versions.</p>
+                                <ul class="modal-popup__cat">
+                                    <li>Mobile Development</li>
+                                    <li>UI/UX Design</li>
+                                </ul>
+                            </div>
+                
+                            <a href="https://www.github.com/" class="modal-popup__details">View on GitHub</a>
+                        </div>
+                    </div> <!-- end modal -->
+
+                    <div id="modal-03" hidden>
+                        <div class="modal-popup">
+                            <img src="images/portfolio/gallery/g-rucksack.jpg" alt="Data Analytics Dashboard">
+                
+                            <div class="modal-popup__desc">
+                                <h5>Data Analytics Dashboard</h5>
+                                <p>Interactive dashboard for visualizing complex datasets with customizable charts and reports. Built with D3.js for data visualization and Python Flask backend for data processing. Features real-time data updates and export functionality.</p>
+                                <ul class="modal-popup__cat">
+                                    <li>Web Application</li>
+                                    <li>Data Visualization</li>
+                                </ul>
+                            </div>
+                
+                            <a href="https://www.github.com/" class="modal-popup__details">View on GitHub</a>
+                        </div>
+                    </div> <!-- end modal -->
+
+                    <div id="modal-04" hidden>
+                        <div class="modal-popup">
+                            <img src="images/portfolio/gallery/g-skaterboy.jpg" alt="Creative Agency Website">
+                
+                            <div class="modal-popup__desc">
+                                <h5>Creative Agency Website</h5>
+                                <p>Responsive portfolio website for a design agency with custom CMS, project galleries, and contact forms. Implemented with modern CSS animations and optimized for performance. Hosted on Netlify with form handling integration.</p>
+                                <ul class="modal-popup__cat">
+                                    <li>UI/UX Design</li>
+                                    <li>Frontend Development</li>
+                                </ul>
+                            </div>
+                
+                            <a href="https://www.github.com/" class="modal-popup__details">View on GitHub</a>
+                        </div>
+                    </div> <!-- end modal -->
+
+                    <div id="modal-05" hidden>
+                        <div class="modal-popup">
+
+                            <img src="images/portfolio/gallery/g-sanddunes.jpg" alt="REST API Service">
+                
+                            <div class="modal-popup__desc">
+                                <h5>REST API Service</h5>
+                                <p>Scalable backend API for a mobile application with user management, content delivery, and analytics. Built with Node.js and Express, using JWT for authentication and Redis for caching. Deployed on Heroku with monitoring.</p>
+                                <ul class="modal-popup__cat">
+                                    <li>Backend Development</li>
+                                    <li>API Design</li>
+                                </ul>
+                            </div>
+                
+                            <a href="https://www.github.com/" class="modal-popup__details">View on GitHub</a>
+                        </div>
+                    </div> <!-- end modal -->
+
+                    <div id="modal-06" hidden>
+                        <div class="modal-popup">
+                            <img src="images/portfolio/gallery/g-minimalismo.jpg" alt="Scalable Infrastructure">
+                
+                            <div class="modal-popup__desc">
+                                <h5>Scalable Infrastructure</h5>
+                                <p>Cloud infrastructure setup for high-traffic web application using AWS services including EC2, RDS, S3, and CloudFront. Implemented auto-scaling, load balancing, and database replication for optimal performance and reliability.</p>
+                                <ul class="modal-popup__cat">
+                                    <li>Cloud Architecture</li>
+                                    <li>DevOps</li>
+                                </ul>
+                            </div>
+                
+                            <a href="https://www.github.com/" class="modal-popup__details">View on GitHub</a>
+                        </div>
+                    </div> <!-- end modal -->
+
+                </div> <!-- end works-portfolio -->
+
+
+                <div class="row testimonials">
+                    <div class="column lg-12" data-animate-block>
+        
+                        <div class="swiper-container testimonial-slider" data-animate-el>
+        
+                            <div class="swiper-wrapper">
+
+                                <div class="testimonial-slider__slide swiper-slide">
+                                    <div class="testimonial-slider__author">
+                                        <img src="images/avatars/user-02.jpg" alt="Author image" class="testimonial-slider__avatar">
+                                        <cite class="testimonial-slider__cite">
+                                            <strong>Sarah Johnson</strong>
+                                            <span>CEO, TechStart Inc.</span>
+                                        </cite>
+                                    </div>
+                                    <p>
+                                    Aymen transformed our concept into a fully functional web application that exceeded our expectations. 
+                                    His attention to both design details and technical implementation was impressive. The project was delivered on time and within budget.
+                                    </p>
+                                </div> <!-- end testimonial-slider__slide -->
+                
+                                <div class="testimonial-slider__slide swiper-slide">
+                                    <div class="testimonial-slider__author">
+                                        <img src="images/avatars/user-03.jpg" alt="Author image" class="testimonial-slider__avatar">
+                                        <cite class="testimonial-slider__cite">
+                                            <strong>Michael Chen</strong>
+                                            <span>Product Manager, DataCorp</span>
+                                        </cite>
+                                    </div>
+                                    <p>
+                                    Working with Aymen was a seamless experience. He not only developed our analytics dashboard but also provided valuable insights on user experience. 
+                                    His full-stack capabilities allowed him to handle both frontend and backend challenges efficiently.
+                                    </p>
+                                </div> <!-- end testimonial-slider__slide -->
+                
+                                <div class="testimonial-slider__slide swiper-slide">
+                                    <div class="testimonial-slider__author">
+                                        <img src="images/avatars/user-01.jpg" alt="Author image" class="testimonial-slider__avatar">
+                                        <cite class="testimonial-slider__cite">
+                                            <strong>Emily Rodriguez</strong>
+                                            <span>Founder, CreativeLab</span>
+                                        </cite>
+                                    </div>
+                                    <p>
+                                    Aymen's ability to understand our vision and translate it into a beautiful, functional website was remarkable. 
+                                    He managed the entire process from design to deployment, and the result was exactly what we needed to showcase our work.
+                                    </p>
+                                </div> <!-- end testimonial-slider__slide -->
+        
+                                <div class="testimonial-slider__slide swiper-slide">
+                                    <div class="testimonial-slider__author">
+                                        <img src="images/avatars/user-06.jpg" alt="Author image" class="testimonial-slider__avatar">
+                                        <cite class="testimonial-slider__cite">
+                                            <strong>David Wilson</strong>
+                                            <span>CTO, StartupXYZ</span>
+                                        </cite>
+                                    </div>
+                                    <p>
+                                    The cloud infrastructure Aymen set up for our application has been running flawlessly under heavy traffic. 
+                                    His expertise in deployment and hosting ensured our platform remained stable and scalable as we grew.
+                                    </p>
+                                </div> <!-- end testimonial-slider__slide -->
+            
+                            </div> <!-- end swiper-wrapper -->
+        
+                            <div class="swiper-pagination"></div>
+        
+                        </div> <!-- end swiper-container -->
+        
+                    </div> <!-- end column -->
+                </div> <!-- end row testimonials -->
+
+            </section> <!-- end s-works -->
+
+
+            <!-- ### contact
+            ================================================== -->
+            <section id="contact" class="s-contact target-section">
+
+                <div class="row contact-top">
+                    <div class="column lg-12">
+                        <h2 class="text-pretitle">
+                            Get In Touch
+                        </h2>
+
+                        <p class="h1">
+                            I'm always interested in new challenges and opportunities.
+                            Whether you have a project idea or just want to discuss technology and design — let's connect.
+                        </p>
                     </div>
-                </div>
-            </div>
-            <div class="row align-items-end">
-                <div class="col-lg-3 col-md-6">
-                    <div class="footer-info">
-                        <span>Call Now:</span>
-                        <span>+1 234 567 890</span>
+                </div> <!-- end contact-top -->
+
+                <div class="row contact-bottom">
+                    <div class="column lg-3 md-5 tab-6 stack-on-550 contact-block">
+                        <h3 class="text-pretitle">Reach me at</h3>
+                        <p class="contact-links">
+                            <a href="mailto:hello@aymen.com" class="mailtoui">hello@aymen.com</a> <br>
+                            <a href="tel:+1234567890">+123 456 7890</a>
+                        </p>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="footer-info">
-                        <span>Email Now:</span>
-                        <span>hello@aymenlkenouche.com</span>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="footer-info">
-                        <span>My Location:</span>
-                        <span>Available Worldwide</span>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="footer-social text-white">
-                        <span>Follow Me:</span>
-                        <ul>
-                            <li><a href="javascript:void(0);"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                            <li><a href="javascript:void(0);"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                            <li><a href="javascript:void(0);"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                            <li><a href="javascript:void(0);"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                    <div class="column lg-4 md-5 tab-6 stack-on-550 contact-block">
+                        <h3 class="text-pretitle">Social</h3>
+                        <ul class="contact-social">
+                            <li><a href="#0">GitHub</a></li>
+                            <li><a href="#0">LinkedIn</a></li>
+                            <li><a href="#0">Behance</a></li>
+                            <li><a href="#0">Dribbble</a></li>
+                            <li><a href="#0">Twitter</a></li>
                         </ul>
                     </div>
+                    <div class="column lg-4 md-12 contact-block">
+                        <a href="mailto:hello@aymen.com" class="mailtoui btn btn--medium u-fullwidth contact-btn">Start a Project</a>
+                    </div>
+                </div> <!-- end contact-bottom -->
+
+            </section> <!-- end contact -->
+
+        </main> <!-- end s-content -->
+
+
+        <!-- ## footer
+        ================================================== -->
+        <footer class="s-footer">
+
+            <div class="row">
+                <div class="column ss-copyright">
+                    <span>© Copyright Aymen 2023</span> 
+                    <span>Computer Engineer | Full Stack Developer | UI/UX Designer</span>
+                </div>
+
+                <div class="ss-go-top">
+                    <a class="smoothscroll" title="Back to Top" href="#top">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill-rule="evenodd" clip-rule="evenodd"><path d="M11 2.206l-6.235 7.528-.765-.645 7.521-9 7.479 9-.764.646-6.236-7.53v21.884h-1v-21.883z"/></svg>
+                    </a>
                 </div>
             </div>
-        </div>
-        <div class="footer-copyright">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 col-md-6">
-                        <div class="footer-logo">
-                            <a href="index.html"><img src="assets/images/logo-white.png" alt="Aymen Lkenouche"></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="copyright-text">
-                            <span>© 2023 by <a href="index.html">Aymen Lkenouche.</a> All Rights Reserved</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!--Footer End-->
 
-    <!--Back To Top Start-->
-    <div class="progress-wrap active-progress">
-        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 273.171;"></path>
-        </svg>
-    </div>
-    <!--Back To Top End-->
+        </footer> <!-- end s-footer -->
 
-    <!-- Jquery JS Link -->
-    <script src="assets/js/jquery.min.js"></script>
+    </div> <!-- end -s-pagewrap -->
 
-    <!-- Bootstrap JS Link -->
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/popper.min.js"></script>
 
-    <!-- Custom JS Link -->
-    <script src="assets/js/custom.js"></script>
-
-    <!-- Swiper Slider JS Link -->
-    <script src="assets/js/swiper-bundle.min.js"></script>
-
-    <!-- Wow Animation JS -->
-    <script src="assets/js/wow.min.js"></script>
-
-    <!-- Magnific JS -->
-    <script src="assets/js/magnific-popup.js"></script>
-    <script src="assets/js/custom-magnific-popup.js"></script>
-
-    <!-- BG-Moving JS -->
-    <script src="assets/js/bg-moving.js"></script>
-
-    <!--Counter JS-->
-    <script src="assets/js/custom-scroll-count.js"></script>
-
-    <!--Jarallax JS-->
-    <script src="assets/js/jarallax.js"></script>
-    <script src="assets/js/jarallax.min.js"></script>
-
-    <!--Back To Top JS-->
-    <script src="assets/js/back-to-top.js"></script>
+    <!-- Java Script
+    ================================================== -->
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
 
 </body>
-
 </html>
