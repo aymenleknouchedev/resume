@@ -131,15 +131,28 @@ body::before {
     display: none;
     flex-direction: column;
     cursor: pointer;
+    gap: 6px;
+    z-index: 1001;
 }
 
 .hamburger span {
     width: 25px;
     height: 3px;
     background: var(--primary-color);
-    margin: 5px 0;
     border-radius: 2px;
     transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
 }
 
 /* ========== HERO SECTION ========== */
@@ -991,10 +1004,57 @@ body::before {
 @media (max-width: 768px) {
     .navbar-menu {
         display: none;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 70px);
+        flex-direction: column;
+        background: linear-gradient(135deg, rgba(15, 23, 42, 0.98) 0%, rgba(99, 102, 241, 0.1) 100%);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-top: 2px solid rgba(99, 102, 241, 0.3);
+        gap: 0;
+        padding: 2rem 0;
+        z-index: 999;
+        animation: slideDown 0.3s ease;
     }
 
-    .hamburger {
+    .navbar-menu.active {
         display: flex;
+    }
+
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .navbar-menu li {
+        border-bottom: 1px solid rgba(99, 102, 241, 0.2);
+    }
+
+    .nav-link {
+        display: block;
+        padding: 1rem 2rem;
+        color: var(--text-secondary);
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+    }
+
+    .nav-link:hover {
+        background: rgba(99, 102, 241, 0.1);
+        color: var(--primary-color);
+        padding-left: 3rem;
+    }
+
+    .nav-link::after {
+        display: none;
     }
 
     .hero-wrapper {

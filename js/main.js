@@ -17,14 +17,24 @@ const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.navbar-menu');
 
 hamburger?.addEventListener('click', () => {
-    navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
 });
 
 // Close menu when a link is clicked
 document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
-        navMenu.style.display = 'none';
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
     });
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (!e.target.closest('.navbar')) {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+    }
 });
 
 // Navbar background on scroll
