@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitLife - Fitness & Wellness</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #0a2e1a 0%, #1a4d32 50%, #0a2e1a 100%); color: #e0e0e0; overflow-x: hidden; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        nav { position: fixed; top: 0; width: 100%; background: rgba(10, 46, 26, 0.95); backdrop-filter: blur(10px); border-bottom: 2px solid #10b981; z-index: 1000; padding: 15px 0; }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 28px; font-weight: bold; background: linear-gradient(135deg, #10b981, #34d399); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        nav a { color: #e0e0e0; text-decoration: none; font-size: 14px; transition: 0.3s; }
+        nav a:hover { color: #10b981; }
+        .hero { margin-top: 70px; padding: 100px 0; background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(52, 211, 153, 0.08) 100%); border-bottom: 1px solid rgba(16, 185, 129, 0.2); position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: -30%; right: -10%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, transparent 70%); border-radius: 50%; animation: float 6s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(30px); } }
+        .hero-content { position: relative; z-index: 1; }
+        .hero h1 { font-size: 56px; margin-bottom: 20px; line-height: 1.2; color: #fff; }
+        .hero h1 .highlight { background: linear-gradient(135deg, #10b981, #34d399); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .hero p { font-size: 18px; color: #b0b0b0; margin-bottom: 30px; line-height: 1.6; }
+        .cta-buttons { display: flex; gap: 15px; }
+        .btn { padding: 14px 35px; border: none; border-radius: 8px; font-size: 16px; cursor: pointer; transition: all 0.3s; font-weight: 600; }
+        .btn-primary { background: linear-gradient(135deg, #10b981, #059669); color: #fff; }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4); }
+        .btn-secondary { background: transparent; border: 2px solid #10b981; color: #10b981; }
+        .btn-secondary:hover { background: rgba(16, 185, 129, 0.1); }
+        .section { padding: 100px 0; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header h2 { font-size: 42px; margin-bottom: 15px; color: #fff; }
+        .section-header h2 .accent { color: #10b981; }
+        .section-header p { font-size: 16px; color: #8b92a0; max-width: 500px; margin: 0 auto; }
+        .programs { background: #0f1729; }
+        .programs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 50px; }
+        .program-card { background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(52, 211, 153, 0.05)); border: 1px solid rgba(16, 185, 129, 0.2); border-radius: 12px; padding: 35px; transition: all 0.3s; }
+        .program-card:hover { background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(52, 211, 153, 0.1)); border-color: #10b981; transform: translateY(-10px); }
+        .program-icon { font-size: 45px; color: #10b981; margin-bottom: 20px; }
+        .program-card h3 { font-size: 24px; margin-bottom: 15px; color: #fff; }
+        .program-card p { color: #b0b0b0; line-height: 1.6; }
+        .program-list { list-style: none; margin-top: 15px; }
+        .program-list li { color: #8b92a0; margin-bottom: 8px; padding-left: 20px; position: relative; }
+        .program-list li::before { content: '→'; position: absolute; left: 0; color: #10b981; }
+        .trainers { background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(52, 211, 153, 0.03) 100%); }
+        .trainers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 50px; }
+        .trainer-card { background: rgba(15, 23, 41, 0.8); border: 1px solid rgba(16, 185, 129, 0.2); border-radius: 10px; overflow: hidden; transition: all 0.3s; text-align: center; }
+        .trainer-card:hover { border-color: #10b981; transform: scale(1.05); }
+        .trainer-image { width: 100%; height: 200px; background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(52, 211, 153, 0.1)); display: flex; align-items: center; justify-content: center; font-size: 60px; color: #10b981; }
+        .trainer-info { padding: 20px; }
+        .trainer-info h3 { color: #fff; margin-bottom: 5px; }
+        .trainer-info p { color: #10b981; font-weight: 600; font-size: 14px; }
+        .pricing { background: #0f1729; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
+        .price-card { background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(52, 211, 153, 0.05)); border: 2px solid rgba(16, 185, 129, 0.2); border-radius: 12px; padding: 40px; text-align: center; transition: all 0.3s; }
+        .price-card.featured { background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(52, 211, 153, 0.1)); border-color: #10b981; transform: scale(1.05); }
+        .price-card h3 { font-size: 28px; margin-bottom: 20px; color: #fff; }
+        .price-amount { font-size: 48px; font-weight: bold; color: #10b981; margin: 20px 0; }
+        .price-period { color: #8b92a0; font-size: 14px; }
+        .price-features { list-style: none; text-align: left; margin: 30px 0; }
+        .price-features li { color: #b0b0b0; padding: 12px 0; border-bottom: 1px solid rgba(16, 185, 129, 0.1); }
+        .price-card .btn { width: 100%; }
+        .stats { background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(52, 211, 153, 0.08)); padding: 80px 0; border-top: 1px solid rgba(16, 185, 129, 0.2); }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; text-align: center; }
+        .stat-number { font-size: 48px; font-weight: bold; color: #10b981; margin-bottom: 10px; }
+        .stat-label { color: #8b92a0; }
+        .cta-section { background: #0f1729; padding: 80px 0; text-align: center; }
+        .cta-section h2 { font-size: 42px; margin-bottom: 20px; color: #fff; }
+        .cta-section p { font-size: 18px; color: #b0b0b0; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
+        footer { background: #0a0e27; border-top: 2px solid #10b981; padding: 50px 0; color: #8b92a0; }
+        .back-link { color: #10b981; text-decoration: none; margin-bottom: 30px; display: inline-block; }
+        footer p { text-align: center; color: #666; margin-top: 20px; border-top: 1px solid rgba(16, 185, 129, 0.2); padding-top: 20px; }
+        @media (max-width: 768px) { .hero h1 { font-size: 36px; } .price-card.featured { transform: scale(1); } .btn { width: 100%; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo"><i class="fas fa-dumbbell"></i> FitLife</div>
+            <a href="../index.html" style="color: #10b981;">← Back to Portfolio</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Transform Your <span class="highlight">Body & Mind</span></h1>
+                <p>State-of-the-art fitness facility with expert trainers and comprehensive wellness programs.</p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary">Start Your Journey</button>
+                    <button class="btn btn-secondary">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="programs section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our <span class="accent">Programs</span></h2>
+                <p>Comprehensive fitness and wellness programs for all levels</p>
+            </div>
+            <div class="programs-grid">
+                <div class="program-card">
+                    <div class="program-icon"><i class="fas fa-heart-pulse"></i></div>
+                    <h3>Cardio Training</h3>
+                    <p>High-intensity interval training to improve endurance and cardiovascular health.</p>
+                    <ul class="program-list">
+                        <li>Treadmill & Elliptical</li>
+                        <li>Rowing Machine</li>
+                        <li>HIIT Classes</li>
+                        <li>Spin Classes</li>
+                    </ul>
+                </div>
+                <div class="program-card">
+                    <div class="program-icon"><i class="fas fa-person-hiking"></i></div>
+                    <h3>Strength Training</h3>
+                    <p>Build muscle and increase strength with personalized weight training programs.</p>
+                    <ul class="program-list">
+                        <li>Weight Lifting</li>
+                        <li>Resistance Training</li>
+                        <li>Functional Fitness</li>
+                        <li>CrossFit Style</li>
+                    </ul>
+                </div>
+                <div class="program-card">
+                    <div class="program-icon"><i class="fas fa-person-praying"></i></div>
+                    <h3>Yoga & Mind</h3>
+                    <p>Find balance and inner peace through yoga and meditation practices.</p>
+                    <ul class="program-list">
+                        <li>Hatha Yoga</li>
+                        <li>Power Yoga</li>
+                        <li>Meditation</li>
+                        <li>Pilates</li>
+                    </ul>
+                </div>
+                <div class="program-card">
+                    <div class="program-icon"><i class="fas fa-person-snowboarding"></i></div>
+                    <h3>Group Classes</h3>
+                    <p>Fun and energetic group fitness classes led by certified instructors.</p>
+                    <ul class="program-list">
+                        <li>Zumba</li>
+                        <li>Dance Fitness</li>
+                        <li>Kickboxing</li>
+                        <li>Boot Camp</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="trainers section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Meet Our <span class="accent">Expert Trainers</span></h2>
+                <p>Certified professionals dedicated to your fitness success</p>
+            </div>
+            <div class="trainers-grid">
+                <div class="trainer-card">
+                    <div class="trainer-image"><i class="fas fa-user-tie"></i></div>
+                    <div class="trainer-info">
+                        <h3>Marcus Johnson</h3>
+                        <p>Strength & Conditioning Coach</p>
+                    </div>
+                </div>
+                <div class="trainer-card">
+                    <div class="trainer-image"><i class="fas fa-user-astronaut"></i></div>
+                    <div class="trainer-info">
+                        <h3>Lisa Chen</h3>
+                        <p>Yoga & Wellness Instructor</p>
+                    </div>
+                </div>
+                <div class="trainer-card">
+                    <div class="trainer-image"><i class="fas fa-user-ninja"></i></div>
+                    <div class="trainer-info">
+                        <h3>Alex Rodriguez</h3>
+                        <p>HIIT & Cardio Specialist</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Membership <span class="accent">Plans</span></h2>
+                <p>Choose the perfect plan for your fitness journey</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <h3>Basic</h3>
+                    <div class="price-amount">$29</div>
+                    <div class="price-period">per month</div>
+                    <ul class="price-features">
+                        <li>✓ 24/7 gym access</li>
+                        <li>✓ All equipment</li>
+                        <li>✓ Locker room access</li>
+                        <li>✓ Email support</li>
+                    </ul>
+                    <button class="btn btn-secondary">Get Started</button>
+                </div>
+                <div class="price-card featured">
+                    <h3>Premium</h3>
+                    <div class="price-amount">$59</div>
+                    <div class="price-period">per month</div>
+                    <ul class="price-features">
+                        <li>✓ 24/7 gym access</li>
+                        <li>✓ All classes included</li>
+                        <li>✓ Personal trainer (2x/mo)</li>
+                        <li>✓ Priority support</li>
+                    </ul>
+                    <button class="btn btn-primary">Start Now</button>
+                </div>
+                <div class="price-card">
+                    <h3>Elite</h3>
+                    <div class="price-amount">$99</div>
+                    <div class="price-period">per month</div>
+                    <ul class="price-features">
+                        <li>✓ Everything in Premium</li>
+                        <li>✓ Unlimited personal training</li>
+                        <li>✓ Nutrition coaching</li>
+                        <li>✓ VIP amenities</li>
+                    </ul>
+                    <button class="btn btn-secondary">Contact Us</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div>
+                    <div class="stat-number">5000+</div>
+                    <div class="stat-label">Active Members</div>
+                </div>
+                <div>
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Classes Per Week</div>
+                </div>
+                <div>
+                    <div class="stat-number">25+</div>
+                    <div class="stat-label">Expert Trainers</div>
+                </div>
+                <div>
+                    <div class="stat-number">4.9★</div>
+                    <div class="stat-label">Member Rating</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to transform your life?</h2>
+            <p>Join thousands of members who have achieved their fitness goals with FitLife.</p>
+            <button class="btn btn-primary">Start Your Free Trial</button>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <a href="../index.html" class="back-link">← Back to Portfolio</a>
+            <p>&copy; 2025 FitLife. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

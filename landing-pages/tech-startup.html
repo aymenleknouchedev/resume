@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechVenture - AI & Innovation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #0a1428 0%, #1a2a4a 100%); color: #e0e0e0; overflow-x: hidden; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        nav { position: fixed; top: 0; width: 100%; background: rgba(10, 20, 40, 0.95); backdrop-filter: blur(10px); border-bottom: 2px solid #00d9ff; z-index: 1000; padding: 15px 0; }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 28px; font-weight: bold; color: #00d9ff; }
+        nav a { color: #e0e0e0; text-decoration: none; font-size: 14px; transition: 0.3s; }
+        nav a:hover { color: #00d9ff; }
+        .hero { margin-top: 70px; padding: 100px 0; background: linear-gradient(135deg, rgba(0, 217, 255, 0.15) 0%, rgba(0, 200, 255, 0.08) 100%); border-bottom: 1px solid rgba(0, 217, 255, 0.2); position: relative; overflow: hidden; }
+        .hero::before { content: ''; position: absolute; top: -50%; right: -10%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(0, 217, 255, 0.1) 0%, transparent 70%); border-radius: 50%; animation: float 6s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0px) scale(1); } 50% { transform: translateY(20px) scale(1.05); } }
+        .hero-content { position: relative; z-index: 1; }
+        .hero h1 { font-size: 56px; margin-bottom: 20px; line-height: 1.2; color: #fff; font-weight: 800; }
+        .hero h1 .highlight { color: #00d9ff; }
+        .hero p { font-size: 18px; color: #a8c5dd; margin-bottom: 30px; line-height: 1.6; }
+        .cta-buttons { display: flex; gap: 15px; }
+        .btn { padding: 14px 35px; border: none; border-radius: 8px; font-size: 16px; cursor: pointer; transition: all 0.3s; font-weight: 600; }
+        .btn-primary { background: linear-gradient(135deg, #00d9ff, #00a8cc); color: #0a1428; }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0, 217, 255, 0.4); }
+        .btn-secondary { background: transparent; border: 2px solid #00d9ff; color: #00d9ff; }
+        .btn-secondary:hover { background: rgba(0, 217, 255, 0.1); }
+        .section { padding: 100px 0; }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header h2 { font-size: 42px; margin-bottom: 15px; color: #fff; }
+        .section-header h2 .accent { color: #00d9ff; }
+        .section-header p { font-size: 16px; color: #7a8fa6; max-width: 500px; margin: 0 auto; }
+        .products { background: #0f1825; }
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 50px; }
+        .product-card { background: linear-gradient(135deg, rgba(0, 217, 255, 0.08), rgba(0, 200, 255, 0.04)); border: 1px solid rgba(0, 217, 255, 0.2); border-radius: 12px; padding: 35px; transition: all 0.3s; position: relative; }
+        .product-card::after { content: ''; position: absolute; top: 0; right: 0; width: 100px; height: 100px; background: radial-gradient(circle, rgba(0, 217, 255, 0.1), transparent); border-radius: 50%; }
+        .product-card:hover { background: linear-gradient(135deg, rgba(0, 217, 255, 0.12), rgba(0, 200, 255, 0.08)); border-color: #00d9ff; transform: translateY(-10px); }
+        .product-icon { font-size: 45px; color: #00d9ff; margin-bottom: 20px; position: relative; z-index: 1; }
+        .product-card h3 { font-size: 24px; margin-bottom: 15px; color: #fff; position: relative; z-index: 1; }
+        .product-card p { color: #a8c5dd; line-height: 1.6; position: relative; z-index: 1; }
+        .features { background: linear-gradient(135deg, rgba(0, 217, 255, 0.05) 0%, rgba(0, 200, 255, 0.03) 100%); }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; margin-top: 50px; }
+        .feature-item { background: rgba(15, 24, 37, 0.8); border-left: 4px solid #00d9ff; border-radius: 8px; padding: 25px; }
+        .feature-item h3 { color: #00d9ff; margin-bottom: 10px; font-size: 18px; }
+        .feature-item p { color: #a8c5dd; font-size: 14px; line-height: 1.6; }
+        .use-cases { background: #0f1825; }
+        .use-cases-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 50px; }
+        .use-case { background: linear-gradient(135deg, rgba(0, 217, 255, 0.1), rgba(0, 200, 255, 0.05)); border: 1px solid rgba(0, 217, 255, 0.2); border-radius: 10px; padding: 30px; }
+        .use-case h3 { color: #fff; margin-bottom: 12px; font-size: 20px; }
+        .use-case p { color: #a8c5dd; font-size: 14px; line-height: 1.6; }
+        .partners { background: linear-gradient(135deg, rgba(0, 217, 255, 0.08), rgba(0, 200, 255, 0.05)); padding: 100px 0; }
+        .partners-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-top: 50px; text-align: center; }
+        .partner-logo { font-size: 24px; color: #00d9ff; padding: 30px; background: rgba(15, 24, 37, 0.8); border-radius: 10px; transition: all 0.3s; }
+        .partner-logo:hover { background: rgba(15, 24, 37, 0.95); transform: scale(1.1); }
+        .stats { background: #0f1825; padding: 80px 0; border-top: 1px solid rgba(0, 217, 255, 0.2); }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; text-align: center; }
+        .stat-number { font-size: 48px; font-weight: bold; color: #00d9ff; margin-bottom: 10px; }
+        .stat-label { color: #7a8fa6; }
+        .cta-section { background: linear-gradient(135deg, rgba(0, 217, 255, 0.1), rgba(0, 200, 255, 0.05)); padding: 80px 0; text-align: center; }
+        .cta-section h2 { font-size: 42px; margin-bottom: 20px; color: #fff; }
+        .cta-section p { font-size: 18px; color: #a8c5dd; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
+        footer { background: #050a15; border-top: 2px solid #00d9ff; padding: 50px 0; color: #7a8fa6; }
+        .back-link { color: #00d9ff; text-decoration: none; margin-bottom: 30px; display: inline-block; }
+        footer p { text-align: center; color: #444; margin-top: 20px; border-top: 1px solid rgba(0, 217, 255, 0.2); padding-top: 20px; }
+        @media (max-width: 768px) { .hero h1 { font-size: 36px; } .cta-buttons { flex-direction: column; } .btn { width: 100%; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo"><i class="fas fa-rocket"></i> TechVenture</div>
+            <a href="../index.html" style="color: #00d9ff;">← Back to Portfolio</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>The Future of <span class="highlight">AI Technology</span></h1>
+                <p>Revolutionary AI and machine learning solutions that transform how businesses operate.</p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary">Get Started</button>
+                    <button class="btn btn-secondary">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="products section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our <span class="accent">Products</span></h2>
+                <p>Cutting-edge AI solutions for enterprise</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-icon"><i class="fas fa-brain"></i></div>
+                    <h3>AI Engine</h3>
+                    <p>Advanced machine learning engine for predictive analytics and intelligent automation.</p>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Analytics Platform</h3>
+                    <p>Real-time data insights and business intelligence powered by AI.</p>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Security AI</h3>
+                    <p>Intelligent threat detection and cybersecurity powered by machine learning.</p>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon"><i class="fas fa-robot"></i></div>
+                    <h3>Automation Suite</h3>
+                    <p>Automate complex business processes with intelligent workflow automation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose <span class="accent">TechVenture</span></h2>
+                <p>Industry-leading AI technology and expertise</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <h3><i class="fas fa-zap"></i> Lightning Fast</h3>
+                    <p>Process millions of data points in seconds with our optimized algorithms.</p>
+                </div>
+                <div class="feature-item">
+                    <h3><i class="fas fa-shield"></i> Enterprise Grade</h3>
+                    <p>Bank-level security and compliance with industry standards.</p>
+                </div>
+                <div class="feature-item">
+                    <h3><i class="fas fa-cog"></i> Easy Integration</h3>
+                    <p>Seamless integration with your existing systems and workflows.</p>
+                </div>
+                <div class="feature-item">
+                    <h3><i class="fas fa-headset"></i> Expert Support</h3>
+                    <p>24/7 dedicated support from our team of AI specialists.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="use-cases section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Use <span class="accent">Cases</span></h2>
+                <p>How businesses leverage our AI solutions</p>
+            </div>
+            <div class="use-cases-grid">
+                <div class="use-case">
+                    <h3>Finance</h3>
+                    <p>Fraud detection, risk analysis, and algorithmic trading powered by machine learning.</p>
+                </div>
+                <div class="use-case">
+                    <h3>Healthcare</h3>
+                    <p>Diagnostic assistance, patient outcome prediction, and drug discovery acceleration.</p>
+                </div>
+                <div class="use-case">
+                    <h3>Retail</h3>
+                    <p>Customer behavior analysis, inventory optimization, and personalized recommendations.</p>
+                </div>
+                <div class="use-case">
+                    <h3>Manufacturing</h3>
+                    <p>Predictive maintenance, quality control, and production optimization.</p>
+                </div>
+                <div class="use-case">
+                    <h3>Logistics</h3>
+                    <p>Route optimization, demand forecasting, and supply chain automation.</p>
+                </div>
+                <div class="use-case">
+                    <h3>Marketing</h3>
+                    <p>Customer segmentation, churn prediction, and campaign optimization.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="partners section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Trusted by <span class="accent">Industry Leaders</span></h2>
+                <p>Leading enterprises trust TechVenture for their AI needs</p>
+            </div>
+            <div class="partners-grid">
+                <div class="partner-logo"><i class="fas fa-building"></i><br>TechCorp</div>
+                <div class="partner-logo"><i class="fas fa-leaf"></i><br>GreenTech</div>
+                <div class="partner-logo"><i class="fas fa-hospital"></i><br>HealthAI</div>
+                <div class="partner-logo"><i class="fas fa-shopping-cart"></i><br>RetailMax</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div>
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Enterprise Clients</div>
+                </div>
+                <div>
+                    <div class="stat-number">2B+</div>
+                    <div class="stat-label">Data Points/Day</div>
+                </div>
+                <div>
+                    <div class="stat-number">99.99%</div>
+                    <div class="stat-label">Uptime</div>
+                </div>
+                <div>
+                    <div class="stat-number">$2T+</div>
+                    <div class="stat-label">Value Created</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to embrace AI transformation?</h2>
+            <p>Join leading enterprises driving innovation with TechVenture's AI solutions.</p>
+            <button class="btn btn-primary">Schedule Demo</button>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <a href="../index.html" class="back-link">← Back to Portfolio</a>
+            <p>&copy; 2025 TechVenture. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

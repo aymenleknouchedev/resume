@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloudFlow - Project Management SaaS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+            color: #e0e0e0;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 14, 39, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(52, 211, 153, 0.2);
+            z-index: 1000;
+            padding: 20px 0;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #34d399, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        nav a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+            padding: 5px 15px;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background: rgba(34, 211, 238, 0.2);
+            color: #34d399;
+        }
+
+        .hero {
+            margin-top: 80px;
+            padding: 120px 0;
+            background: linear-gradient(135deg, rgba(52, 211, 153, 0.15) 0%, rgba(6, 182, 212, 0.08) 50%, #0a0e27 100%);
+            position: relative;
+            overflow: hidden;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            right: -200px;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(52, 211, 153, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -150px;
+            left: -150px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(6, 182, 212, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 10s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(40px);
+            }
+        }
+
+        .hero .container {
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content {
+            animation: slideInLeft 0.8s ease forwards;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 72px;
+            margin-bottom: 25px;
+            line-height: 1.1;
+            color: #fff;
+            font-weight: 900;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 .highlight {
+            background: linear-gradient(135deg, #34d399, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #a0a0a0;
+            margin-bottom: 35px;
+            line-height: 1.7;
+        }
+
+        .hero-features {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 16px;
+            color: #d0d0d0;
+        }
+
+        .hero-feature i {
+            font-size: 24px;
+            color: #34d399;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 16px 40px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #34d399, #06b6d4);
+            color: #0a0e27;
+            box-shadow: 0 10px 30px rgba(52, 211, 153, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(52, 211, 153, 0.5);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid #34d399;
+            color: #34d399;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(52, 211, 153, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .hero-visual {
+            position: relative;
+            height: 500px;
+        }
+
+        .dashboard-mockup {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(52, 211, 153, 0.1), rgba(6, 182, 212, 0.1));
+            border: 2px solid rgba(52, 211, 153, 0.3);
+            border-radius: 20px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            backdrop-filter: blur(10px);
+            animation: float 6s ease-in-out infinite;
+            overflow: hidden;
+        }
+
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .dashboard-title {
+            display: flex;
+            gap: 8px;
+        }
+
+        .dashboard-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #34d399;
+        }
+
+        .dashboard-dot.secondary {
+            background: #06b6d4;
+        }
+
+        .dashboard-dot.tertiary {
+            background: rgba(52, 211, 153, 0.5);
+        }
+
+        .dashboard-menu {
+            display: flex;
+            gap: 15px;
+            font-size: 11px;
+            color: #8b92a0;
+        }
+
+        .dashboard-menu span {
+            padding: 4px 8px;
+            background: rgba(52, 211, 153, 0.1);
+            border-radius: 4px;
+        }
+
+        .dashboard-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .dashboard-chart {
+            display: flex;
+            align-items: flex-end;
+            gap: 8px;
+            height: 60px;
+        }
+
+        .chart-bar {
+            flex: 1;
+            background: linear-gradient(180deg, #34d399, rgba(52, 211, 153, 0.4));
+            border-radius: 4px 4px 0 0;
+            border-top: 2px solid #34d399;
+            min-height: 20px;
+        }
+
+        .chart-bar.secondary {
+            background: linear-gradient(180deg, #06b6d4, rgba(6, 182, 212, 0.4));
+            border-top-color: #06b6d4;
+        }
+
+        .chart-bar:nth-child(1) { height: 40px; }
+        .chart-bar:nth-child(2) { height: 50px; }
+        .chart-bar:nth-child(3) { height: 35px; }
+        .chart-bar:nth-child(4) { height: 60px; }
+        .chart-bar:nth-child(5) { height: 45px; }
+
+        .dashboard-bar {
+            height: 6px;
+            background: linear-gradient(90deg, #34d399 0%, transparent 100%);
+            border-radius: 10px;
+        }
+
+        .dashboard-bar.secondary {
+            background: linear-gradient(90deg, #06b6d4 0%, transparent 100%);
+        }
+
+        .dashboard-bar.tertiary {
+            background: linear-gradient(90deg, rgba(52, 211, 153, 0.6) 0%, transparent 100%);
+        }
+
+        .dashboard-bar:nth-child(1) { width: 90%; }
+        .dashboard-bar:nth-child(2) { width: 70%; }
+        .dashboard-bar:nth-child(3) { width: 85%; }
+        .dashboard-bar:nth-child(4) { width: 60%; }
+
+        .dashboard-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: auto;
+        }
+
+        .dashboard-stat {
+            background: rgba(52, 211, 153, 0.1);
+            border: 1px solid rgba(52, 211, 153, 0.2);
+            border-radius: 8px;
+            padding: 12px;
+            text-align: center;
+        }
+
+        .dashboard-stat-value {
+            font-size: 16px;
+            font-weight: bold;
+            color: #34d399;
+        }
+
+        .dashboard-stat-label {
+            font-size: 10px;
+            color: #8b92a0;
+            margin-top: 4px;
+        }
+
+        .dashboard-progress {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .progress-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 11px;
+        }
+
+        .progress-label {
+            color: #8b92a0;
+        }
+
+        .progress-value {
+            color: #34d399;
+            font-weight: bold;
+        }
+
+        .progress-track {
+            width: 100%;
+            height: 4px;
+            background: rgba(52, 211, 153, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 4px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #34d399, #06b6d4);
+            border-radius: 10px;
+        }
+
+        .features {
+            padding: 100px 0;
+            background: #0f1729;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 42px;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .section-header h2 .accent {
+            color: #34d399;
+        }
+
+        .section-header p {
+            font-size: 16px;
+            color: #8b92a0;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .feature-card {
+            background: rgba(52, 211, 153, 0.05);
+            border: 2px solid rgba(52, 211, 153, 0.2);
+            border-radius: 12px;
+            padding: 35px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #34d399, transparent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-card:hover {
+            background: rgba(52, 211, 153, 0.1);
+            border-color: rgba(52, 211, 153, 0.5);
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            color: #34d399;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .feature-card p {
+            color: #b0b0b0;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            color: #8b92a0;
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .feature-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #34d399;
+            font-weight: bold;
+        }
+
+        .pricing {
+            padding: 100px 0;
+            background: linear-gradient(135deg, rgba(52, 211, 153, 0.05) 0%, rgba(6, 182, 212, 0.05) 100%);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .price-card {
+            background: rgba(15, 23, 41, 0.8);
+            border: 2px solid rgba(52, 211, 153, 0.2);
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .price-card.featured {
+            background: linear-gradient(135deg, rgba(52, 211, 153, 0.2), rgba(6, 182, 212, 0.2));
+            border-color: #34d399;
+            transform: scale(1.05);
+            box-shadow: 0 20px 60px rgba(52, 211, 153, 0.2);
+        }
+
+        .price-card h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .price-amount {
+            font-size: 48px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #34d399, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 20px 0;
+        }
+
+        .price-period {
+            color: #8b92a0;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        .price-features {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        .price-features li {
+            color: #b0b0b0;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(52, 211, 153, 0.1);
+        }
+
+        .price-card .btn {
+            width: 100%;
+        }
+
+        .testimonials {
+            padding: 100px 0;
+            background: #0f1729;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .testimonial-card {
+            background: rgba(52, 211, 153, 0.05);
+            border-left: 4px solid #34d399;
+            border-radius: 8px;
+            padding: 30px;
+            transition: all 0.3s;
+        }
+
+        .testimonial-card:hover {
+            background: rgba(52, 211, 153, 0.1);
+            transform: translateY(-5px);
+        }
+
+        .stars {
+            color: #fbbf24;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .testimonial-text {
+            color: #b0b0b0;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .author-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #34d399, #06b6d4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0a0e27;
+            font-weight: bold;
+        }
+
+        .author-info h4 {
+            color: #fff;
+            font-size: 14px;
+        }
+
+        .author-info p {
+            color: #8b92a0;
+            font-size: 12px;
+        }
+
+        .stats {
+            padding: 80px 0;
+            background: linear-gradient(135deg, rgba(52, 211, 153, 0.1), rgba(6, 182, 212, 0.1));
+            border-top: 1px solid rgba(34, 211, 238, 0.2);
+            border-bottom: 1px solid rgba(34, 211, 238, 0.2);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .stat {
+            color: #e0e0e0;
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #34d399, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: #8b92a0;
+            font-size: 16px;
+        }
+
+        .cta-section {
+            padding: 80px 0;
+            background: #0f1729;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            color: #b0b0b0;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .faq {
+            padding: 100px 0;
+            background: linear-gradient(135deg, rgba(52, 211, 153, 0.05) 0%, rgba(6, 182, 212, 0.05) 100%);
+        }
+
+        .faq-container {
+            max-width: 700px;
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+
+        .faq-item {
+            background: rgba(52, 211, 153, 0.05);
+            border: 1px solid rgba(52, 211, 153, 0.2);
+            border-radius: 8px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .faq-item:hover {
+            background: rgba(52, 211, 153, 0.1);
+            border-color: rgba(52, 211, 153, 0.4);
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .faq-icon {
+            color: #34d399;
+            transition: 0.3s;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s;
+            background: rgba(52, 211, 153, 0.02);
+            color: #b0b0b0;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding: 20px;
+        }
+
+        footer {
+            background: #0a0e27;
+            border-top: 1px solid rgba(52, 211, 153, 0.2);
+            padding: 50px 0;
+            color: #8b92a0;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: #34d399;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .back-link:hover {
+            color: #06b6d4;
+        }
+
+        footer p {
+            text-align: center;
+            color: #666;
+            margin-top: 20px;
+            border-top: 1px solid rgba(52, 211, 153, 0.2);
+            padding-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 80px 0;
+                min-height: auto;
+            }
+
+            .hero .container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .hero-visual {
+                height: 300px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .section-header h2 {
+                font-size: 28px;
+            }
+
+            .price-card.featured {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo"><i class="fas fa-cloud"></i> CloudFlow</div>
+            <a href="../index.html" style="color: #34d399;">← Back to Portfolio</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Manage Projects <span class="highlight">Effortlessly</span></h1>
+                <p>All-in-one platform for seamless team collaboration and project management.</p>
+                <div class="hero-features">
+                    <div class="hero-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Real-time collaboration tools</span>
+                    </div>
+                    <div class="hero-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Advanced analytics & reporting</span>
+                    </div>
+                    <div class="hero-feature">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Secure cloud infrastructure</span>
+                    </div>
+                </div>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary">Start Free Trial</button>
+                    <button class="btn btn-secondary">Watch Demo</button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="dashboard-mockup">
+                    <div class="dashboard-header">
+                        <div class="dashboard-title">
+                            <div class="dashboard-dot"></div>
+                            <div class="dashboard-dot secondary"></div>
+                            <div class="dashboard-dot tertiary"></div>
+                        </div>
+                        <div class="dashboard-menu">
+                            <span>Dashboard</span>
+                            <span>Projects</span>
+                            <span>Team</span>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-section">
+                        <div class="dashboard-chart">
+                            <div class="chart-bar"></div>
+                            <div class="chart-bar secondary"></div>
+                            <div class="chart-bar"></div>
+                            <div class="chart-bar"></div>
+                            <div class="chart-bar secondary"></div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-section">
+                        <div class="dashboard-bar"></div>
+                        <div class="dashboard-bar secondary"></div>
+                        <div class="dashboard-bar tertiary"></div>
+                    </div>
+
+                    <div class="dashboard-stats">
+                        <div class="dashboard-stat">
+                            <div class="dashboard-stat-value">12</div>
+                            <div class="dashboard-stat-label">Projects</div>
+                        </div>
+                        <div class="dashboard-stat">
+                            <div class="dashboard-stat-value">48</div>
+                            <div class="dashboard-stat-label">Tasks</div>
+                        </div>
+                        <div class="dashboard-stat">
+                            <div class="dashboard-stat-value">8</div>
+                            <div class="dashboard-stat-label">Team</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Powerful <span class="accent">Features</span> for Every Team</h2>
+                <p>Everything you need to manage projects efficiently</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-tasks"></i></div>
+                    <h3>Task Management</h3>
+                    <p>Organize and prioritize tasks with custom workflows and automation rules.</p>
+                    <ul class="feature-list">
+                        <li>Drag-and-drop interface</li>
+                        <li>Custom fields</li>
+                        <li>Time tracking</li>
+                        <li>Dependencies</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-users"></i></div>
+                    <h3>Team Collaboration</h3>
+                    <p>Real-time collaboration tools to keep everyone on the same page.</p>
+                    <ul class="feature-list">
+                        <li>Shared workspaces</li>
+                        <li>Comments & mentions</li>
+                        <li>File sharing</li>
+                        <li>Activity feeds</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-chart-bar"></i></div>
+                    <h3>Analytics & Reports</h3>
+                    <p>Gain insights into team performance and project progress.</p>
+                    <ul class="feature-list">
+                        <li>Custom dashboards</li>
+                        <li>Performance metrics</li>
+                        <li>Gantt charts</li>
+                        <li>Export reports</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-plug"></i></div>
+                    <h3>Integrations</h3>
+                    <p>Connect with your favorite tools and create a seamless workflow.</p>
+                    <ul class="feature-list">
+                        <li>100+ integrations</li>
+                        <li>Slack integration</li>
+                        <li>Zapier support</li>
+                        <li>API access</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-lock"></i></div>
+                    <h3>Enterprise Security</h3>
+                    <p>Bank-level security to protect your sensitive project data.</p>
+                    <ul class="feature-list">
+                        <li>End-to-end encryption</li>
+                        <li>SSO & 2FA</li>
+                        <li>SOC 2 compliant</li>
+                        <li>Data backup</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-headset"></i></div>
+                    <h3>24/7 Support</h3>
+                    <p>Dedicated support team ready to help you at every step.</p>
+                    <ul class="feature-list">
+                        <li>Email support</li>
+                        <li>Live chat</li>
+                        <li>Video tutorials</li>
+                        <li>Onboarding help</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat">
+                    <div class="stat-number">50K+</div>
+                    <div class="stat-label">Active Teams</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">2M+</div>
+                    <div class="stat-label">Projects Managed</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">99.9%</div>
+                    <div class="stat-label">Uptime Guarantee</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">4.8★</div>
+                    <div class="stat-label">Customer Rating</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2>Flexible <span class="accent">Pricing Plans</span></h2>
+                <p>Choose the perfect plan for your team. All plans include a 14-day free trial.</p>
+            </div>
+
+            <div class="pricing-grid">
+                <div class="price-card">
+                    <h3>Starter</h3>
+                    <div class="price-amount">$29</div>
+                    <div class="price-period">per month</div>
+                    <ul class="price-features">
+                        <li>✓ Up to 5 projects</li>
+                        <li>✓ 10 team members</li>
+                        <li>✓ Basic reporting</li>
+                        <li>✓ Email support</li>
+                    </ul>
+                    <button class="btn btn-secondary">Get Started</button>
+                </div>
+
+                <div class="price-card featured">
+                    <h3>Professional</h3>
+                    <div class="price-amount">$79</div>
+                    <div class="price-period">per month</div>
+                    <ul class="price-features">
+                        <li>✓ Unlimited projects</li>
+                        <li>✓ 50 team members</li>
+                        <li>✓ Advanced analytics</li>
+                        <li>✓ Priority support</li>
+                    </ul>
+                    <button class="btn btn-primary">Start Free Trial</button>
+                </div>
+
+                <div class="price-card">
+                    <h3>Enterprise</h3>
+                    <div class="price-amount">Custom</div>
+                    <div class="price-period">contact sales</div>
+                    <ul class="price-features">
+                        <li>✓ Unlimited everything</li>
+                        <li>✓ Unlimited users</li>
+                        <li>✓ Custom integrations</li>
+                        <li>✓ Dedicated manager</li>
+                    </ul>
+                    <button class="btn btn-secondary">Contact Sales</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>Trusted by <span class="accent">Industry Leaders</span></h2>
+                <p>See what companies say about CloudFlow</p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <div class="testimonial-text">"CloudFlow transformed how our team manages projects. We're now 40%
+                        more productive."</div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JD</div>
+                        <div class="author-info">
+                            <h4>James Davis</h4>
+                            <p>Project Manager, Tech Corp</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <div class="testimonial-text">"The best investment for our team. Intuitive interface means minimal
+                        training time."</div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SM</div>
+                        <div class="author-info">
+                            <h4>Sarah Mitchell</h4>
+                            <p>Operations Director, Design Studio</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <div class="testimonial-text">"Excellent support and powerful features. CloudFlow handles our
+                        complex workflows perfectly."</div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">RC</div>
+                        <div class="author-info">
+                            <h4>Robert Chen</h4>
+                            <p>CEO, Digital Agency</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked <span class="accent">Questions</span></h2>
+                <p>Find answers to common questions</p>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What is CloudFlow?</span>
+                        <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">CloudFlow is a comprehensive project management platform that helps teams
+                        organize, track, and complete projects efficiently.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Is there a free trial?</span>
+                        <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">Yes! All pricing plans include a 14-day free trial with full access to
+                        features. No credit card required.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can I import existing projects?</span>
+                        <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">Absolutely! CloudFlow supports importing from Asana, Monday.com, Jira, and
+                        many other platforms.</div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What security measures are in place?</span>
+                        <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">CloudFlow uses enterprise-grade security including end-to-end encryption,
+                        SOC 2 compliance, and two-factor authentication.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to transform your project management?</h2>
+            <p>Join 50,000+ teams already using CloudFlow to deliver projects faster.</p>
+            <button class="btn btn-primary">Start Your Free Trial</button>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <a href="../index.html" class="back-link">← Back to Portfolio</a>
+            <p>&copy; 2025 CloudFlow. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function () {
+                this.parentElement.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+
+</html>
